@@ -1,0 +1,124 @@
+\documentclass[reqno]{amsart}
+\usepackage[a4paper, margin=2cm, inlcudehead, includefoot, headheight=10mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{lastpage}
+
+% Hyperlink setup
+\usepackage{hyperref}
+\hypersetup{colorlinks = true, linkcolor = black, citecolor = black, urlcolor = cyan}
+
+% For images
+\usepackage{graphicx}
+\graphicspath{{./images}} % Can specify multiple paths in separate sets of curly brackets
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Useful commands
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+
+\theoremstyle{proposition}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{proposition*}{Proposition}
+
+\theoremstyle{lemma}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem*{lemma*}{Lemma}
+
+\theoremstyle{corollary}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{corollary*}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Definition}
+\newtheorem*{definition*}{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[equation]{Remark}
+\newtheorem*{remark*}{Remark}
+
+\theoremstyle{example}
+\newtheorem{example}[equation]{Example}
+\newtheorem*{example*}{Example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Numbering (within section or subsection)
+\numberwithin{theorem}{section}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set custom headers and footers
+\pagestyle{fancy}
+\fancyhf{} % Clear existing headers and footers
+\renewcommand{\footruleskip}{4mm} % Add some space above the footer
+\fancyhead[L]{\modulecode: \documenttitle}
+\fancyhead[C]{}
+\fancyhead[R]{\studentname, \studentnumber}
+\fancyfoot[L]{}
+\fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
+\fancyfoot[R]{}
+
+% Set a custom style for the 1st page
+\fancypagestyle{firstpagestyle}{
+    \fancyhf{} % Clear existing headers and footers
+    \renewcommand{\footruleskip}{4mm} % Add some space above the footer
+    \renewcommand{\headrulewidth}{0pt} % Remove line from top of page
+    \fancyhead[L]{}
+    \fancyhead[C]{}
+    \fancyhead[R]{}
+    \fancyfoot[L]{}
+    \fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
+    \fancyfoot[R]{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title and date
+\title{\huge{\modulecode\ {\uppercase\modulename}: {\uppercase\documenttitle}}\\\large{{\uppercase\documentsubtitle}}}
+\author{\studentname, \studentnumber}
+% \date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Letters for standard sets of numbers
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bC}{\mathbb{C}}
+
+% Change some Greek letters to different forms
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Information about this document
+\newcommand{\studentname}{Student Name}
+\newcommand{\studentnumber}{12345678}
+\newcommand{\modulecode}{ABC1234}
+\newcommand{\modulename}{Module Name}
+\newcommand{\documenttitle}{Document Title}
+\newcommand{\documentsubtitle}{Document Sub-Title}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+\thispagestyle{firstpagestyle}
+
+\input{content.tex}
+
+\input{bibliography.tex}
+
+\end{document}
