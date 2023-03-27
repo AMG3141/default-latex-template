@@ -6,6 +6,7 @@
 \usepackage{fancyhdr} % For customising headers
 \usepackage{lipsum} % For inserting dummy text
 \usepackage{lastpage} % For finding the page number of the last page
+\usepackage{titlesec} % For changing the size of section headings
 
 % Hyperlink setup
 \usepackage{hyperref}
@@ -82,9 +83,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Change formatting of sections, subsections, etc
+\titleformat{\section}{\LARGE\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\Large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\large\bfseries}{\thesubsubsection}{1em}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Title and date
 \title{\Huge{\modulecode\ {\uppercase\modulename}: {\uppercase\documenttitle}}\\\LARGE{{\uppercase\documentsubtitle}}}
-\author{\studentname, \studentnumber}
+\author{{\Large\studentname, \studentnumber}}
 % \date{\today}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
