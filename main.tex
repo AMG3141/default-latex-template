@@ -7,6 +7,7 @@
 \usepackage{lipsum} % For inserting dummy text
 \usepackage{lastpage} % For finding the page number of the last page
 \usepackage{titlesec} % For changing the size of section headings
+\usepackage{biblatex} % For bibliography management
 
 % Hyperlink setup
 \usepackage{hyperref}
@@ -127,6 +128,7 @@
 
 \input{content.tex}
 
-\input{bibliography.tex}
+\bibliographystyle{plain}
+\bibliography{references.bib}
 
 \end{document}
