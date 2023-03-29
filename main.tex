@@ -8,6 +8,7 @@
 \usepackage{lastpage} % For finding the page number of the last page
 \usepackage{titlesec} % For changing the size of section headings
 \usepackage{biblatex} % For bibliography management
+\usepackage{nameref} % For getting the name of the current section
 
 % Hyperlink setup
 \usepackage{hyperref}
@@ -63,7 +64,9 @@
 \fancyhf{} % Clear existing headers and footers
 \renewcommand{\footruleskip}{4mm} % Add some space above the footer
 \fancyhead[L]{\modulecode: \documenttitle}
-\fancyhead[C]{}
+\makeatletter % This and 2 lines down required for the \@currentlabelname command to work
+\fancyhead[C]{\@currentlabelname}
+\makeatother
 \fancyhead[R]{\studentname, \studentnumber}
 \fancyfoot[L]{}
 \fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
