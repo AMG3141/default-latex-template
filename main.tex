@@ -18,6 +18,11 @@
 \usepackage{graphicx}
 \graphicspath{{./images}} % Can specify multiple paths in separate sets of curly brackets
 
+% Bibliography setup
+\addbibresource{references.bib}
+\bibliography{references}
+\bibliographystyle{plain}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Useful commands
@@ -131,7 +136,6 @@
 
 \input{content.tex}
 
-\bibliographystyle{plain}
-\bibliography{references.bib}
+\printbibliography
 
 \end{document}
